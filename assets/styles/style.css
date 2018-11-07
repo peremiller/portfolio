@@ -1,0 +1,52 @@
+body {
+	background: url("../images/bg3.jpg") no-repeat center center fixed;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+	color: brown;
+	font-size: 50px;
+	font-weight: bold;
+	margin-bottom: 0;
+	transform: rotate(352deg);
+
+}
+
+h2 {
+	color: black;
+	font-size: 18px;
+	margin-top: 0;
+	transform: rotate(352deg);
+}
+
+.bio {
+	color: white;
+	font-size: 14px;
+	background: rgb(0, 0, 0); /* Fallback color */
+	background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+	width: 500px;
+	margin: 0 auto;
+	text-align: center;
+	transform: rotate(352deg);
+}
+
+.me {
+	height: 150px;
+	border-radius: 100%;
+	border-style: solid;
+	border-color: black;
+	margin-top: 40px;
+}
+
+.container {
+	width: 500px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+}
