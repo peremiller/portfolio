@@ -22,9 +22,16 @@ function closeLightbox() {
 }
 
 document.querySelectorAll('[data-full]').forEach((fig) => {
-	fig.addEventListener('click', () => {
+	const open = () => {
 		const img = fig.querySelector('img');
 		openLightbox(fig.dataset.full, img ? img.alt : '');
+	};
+	fig.addEventListener('click', open);
+	fig.addEventListener('keydown', (e) => {
+		if (e.key === 'Enter' || e.key === ' ') {
+			e.preventDefault();
+			open();
+		}
 	});
 });
 
