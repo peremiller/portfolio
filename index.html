@@ -1,18 +1,150 @@
-	<!DOCTYPE html>
-	<html>
-	<head>
-		<title>Developer Portfolio - Miller Perez</title>
-		<link rel="stylesheet" href="assets/styles/style.css">
-		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-	</head>
-	<body>
-		<div class="container">
-			<img src="assets/images/Perez aya John pix.jpg" class="me">
-			<h1>MILLER PEREZ</h1>
-			<h2>FULL  STACK  WEB  DEVELOPER</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Miller Perez — Full Stack Developer &amp; Builder</title>
+	<meta name="description" content="AJ Miller T. Perez — full stack web developer and technical program manager who ships fast: 50+ web apps, bots, and tools.">
+	<meta property="og:title" content="Miller Perez — Full Stack Developer &amp; Builder">
+	<meta property="og:description" content="Full stack developer &amp; technical PM. 50+ shipped apps, bots, and tools.">
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="assets/styles/style.css">
+</head>
+<body>
+	<div class="aurora" aria-hidden="true"></div>
+	<div class="grain" aria-hidden="true"></div>
 
+	<nav class="nav">
+		<a class="nav-logo" href="#top">MP<span class="dot">.</span></a>
+		<div class="nav-links">
+			<a href="#projects">Projects</a>
+			<a href="#skills">Skills</a>
+			<a href="#contact">Contact</a>
+			<a class="nav-cta" href="https://github.com/peremiller" target="_blank" rel="noopener">GitHub ↗</a>
 		</div>
-		<p class="bio"> Miller Perez is a full stack web developer and a learning enthusiast with almost a decade of experience in the IT industry. He also aims to be a data scientist, an entrepreneur, a licensed financial advisor, an author, a stock & currency trader, and a startup founder. 
+	</nav>
+
+	<header class="hero" id="top">
+		<div class="avatar-ring">
+			<img src="assets/images/Perez aya John pix.jpg" alt="Portrait of Miller Perez" class="avatar">
+		</div>
+		<p class="hero-kicker">Hello, I&rsquo;m</p>
+		<h1 class="hero-name">Miller <span class="gradient-text">Perez</span></h1>
+		<p class="hero-role">Full Stack Web Developer · Technical Program Manager · Relentless Builder</p>
+		<p class="hero-bio">
+			I turn ideas into working software — fast. A decade-plus in the IT industry, now
+			shipping web apps, data tools, and bots at a pace of one idea to production in a day.
+			Learning enthusiast, aspiring data scientist, entrepreneur, and startup founder.
 		</p>
-	</body>
-	</html>
+		<div class="hero-actions">
+			<a class="btn btn-primary" href="#projects">See my work</a>
+			<a class="btn btn-ghost" href="#contact">Get in touch</a>
+		</div>
+		<div class="stats">
+			<div class="stat"><span class="stat-num" data-count="50">50+</span><span class="stat-label">Apps &amp; tools shipped</span></div>
+			<div class="stat"><span class="stat-num" data-count="10">10+</span><span class="stat-label">Years in IT</span></div>
+			<div class="stat"><span class="stat-num" data-count="21">21</span><span class="stat-label">Problem domains tackled</span></div>
+		</div>
+	</header>
+
+	<main>
+		<section class="section reveal" id="projects">
+			<h2 class="section-title"><span class="section-index">01</span> Selected Projects</h2>
+			<p class="section-sub">A few of the live things I&rsquo;ve built and shipped.</p>
+			<div class="grid">
+				<a class="card" href="https://solution-hub-tau.vercel.app" target="_blank" rel="noopener">
+					<div class="card-icon">🌍</div>
+					<h3>SolveVerse — Solution Hub</h3>
+					<p>A 21-domain super app mapping ~21,000 actionable solutions to global problems — from disease and clean water to all 17 UN SDGs. Cards, tables, and maps with impact &amp; feasibility scoring.</p>
+					<div class="tags"><span>Single-file app</span><span>Data viz</span><span>Maps</span></div>
+					<span class="card-link">Visit live ↗</span>
+				</a>
+				<a class="card" href="https://retroforge-app.vercel.app" target="_blank" rel="noopener">
+					<div class="card-icon">🔄</div>
+					<h3>RetroForge</h3>
+					<p>Sprint retrospective board with live multi-user shared rooms, an offline + AI solution engine, and facilitator tooling for real agile teams.</p>
+					<div class="tags"><span>Realtime</span><span>Vercel Blob</span><span>AI</span></div>
+					<span class="card-link">Visit live ↗</span>
+				</a>
+				<a class="card" href="https://test-case-manager-delta.vercel.app" target="_blank" rel="noopener">
+					<div class="card-icon">🧪</div>
+					<h3>TestForge</h3>
+					<p>Multi-plan test case management: requirements explorer, gap analysis, tasks, training decks, and Word / Excel / PPT / PDF export — all in the browser.</p>
+					<div class="tags"><span>QA tooling</span><span>Office export</span></div>
+					<span class="card-link">Visit live ↗</span>
+				</a>
+				<a class="card" href="https://claude-group-chat.vercel.app" target="_blank" rel="noopener">
+					<div class="card-icon">🤖</div>
+					<h3>Claude Group Chat</h3>
+					<p>Multi-user chat with a crew of AI personas — 21 personalities, a zero-token simulated engine, invite links, and an opt-in live AI mode.</p>
+					<div class="tags"><span>AI</span><span>Multi-user</span></div>
+					<span class="card-link">Visit live ↗</span>
+				</a>
+				<a class="card" href="https://cash-reserve-planner.vercel.app" target="_blank" rel="noopener">
+					<div class="card-icon">💰</div>
+					<h3>Cash Reserve Planner</h3>
+					<p>Liquidity planning tool with a three-bucket reserve strategy, glide paths, and multi-currency support — personal finance, engineered.</p>
+					<div class="tags"><span>Fintech</span><span>Offline-first</span></div>
+					<span class="card-link">Visit live ↗</span>
+				</a>
+				<a class="card" href="https://wealth-concerns-atlas.vercel.app" target="_blank" rel="noopener">
+					<div class="card-icon">🗺️</div>
+					<h3>Wealth Concerns Atlas</h3>
+					<p>A React + Vite explorer of 2,880 rated solutions to the concerns of wealthy families — searchable, scored, and beautifully browsable.</p>
+					<div class="tags"><span>React</span><span>Vite</span><span>Data</span></div>
+					<span class="card-link">Visit live ↗</span>
+				</a>
+			</div>
+			<p class="more-link">More on the full hub → <a href="https://aj-portfolio-hub.vercel.app" target="_blank" rel="noopener">aj-portfolio-hub.vercel.app</a></p>
+		</section>
+
+		<section class="section reveal" id="skills">
+			<h2 class="section-title"><span class="section-index">02</span> Toolbox</h2>
+			<p class="section-sub">What I build with, day to day.</p>
+			<div class="skill-groups">
+				<div class="skill-group">
+					<h3>Web</h3>
+					<div class="chips"><span>JavaScript</span><span>HTML / CSS</span><span>React</span><span>Next.js</span><span>Vite</span><span>Single-file apps</span></div>
+				</div>
+				<div class="skill-group">
+					<h3>Mobile &amp; Bots</h3>
+					<div class="chips"><span>Flutter</span><span>Kotlin / Compose</span><span>Telegram bots</span><span>Messaging APIs</span></div>
+				</div>
+				<div class="skill-group">
+					<h3>Data &amp; Backend</h3>
+					<div class="chips"><span>Python</span><span>FastAPI</span><span>SQLite</span><span>Supabase</span><span>Serverless</span></div>
+				</div>
+				<div class="skill-group">
+					<h3>Ship &amp; Run</h3>
+					<div class="chips"><span>Vercel</span><span>GitHub</span><span>AI-assisted dev</span><span>PMO / Agile</span></div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section reveal" id="contact">
+			<h2 class="section-title"><span class="section-index">03</span> Let&rsquo;s Build Something</h2>
+			<p class="section-sub">Open to collaborations, freelance work, and interesting problems.</p>
+			<div class="contact-row">
+				<a class="btn btn-primary" href="mailto:pjomill@gmail.com">✉️ pjomill@gmail.com</a>
+				<a class="btn btn-ghost" href="https://github.com/peremiller" target="_blank" rel="noopener">GitHub ↗</a>
+				<a class="btn btn-ghost" href="https://aj-portfolio-hub.vercel.app" target="_blank" rel="noopener">Portfolio Hub ↗</a>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<p>© <span id="year">2026</span> AJ Miller T. Perez · Las Piñas, Philippines · Built by hand, shipped with joy.</p>
+	</footer>
+
+	<script>
+		document.getElementById('year').textContent = new Date().getFullYear();
+		const io = new IntersectionObserver((entries) => {
+			entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+		}, { threshold: 0.12 });
+		document.querySelectorAll('.reveal, .card').forEach(el => io.observe(el));
+	</script>
+</body>
+</html>
