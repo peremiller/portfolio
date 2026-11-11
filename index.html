@@ -14,10 +14,11 @@
 	<link rel="stylesheet" href="assets/styles/style.css">
 <meta name="offline-limits" content="Saved pages and local tools work offline. External links and live services need internet."><link rel="manifest" href="manifest.webmanifest"><script data-offline-client src="offline-client.js" defer></script></head>
 <body>
+	<a class="skip-link" href="#main-content">Skip to main content</a>
 	<div class="aurora" aria-hidden="true"></div>
 	<div class="grain" aria-hidden="true"></div>
 
-	<nav class="nav">
+	<nav class="nav" aria-label="Main navigation">
 		<a class="nav-logo" href="#top">MP<span class="dot">.</span></a>
 		<div class="nav-links">
 			<a href="#projects">Projects</a>
@@ -50,7 +51,7 @@
 		</div>
 	</header>
 
-	<main>
+	<main id="main-content" tabindex="-1">
 		<section class="section reveal" id="projects">
 			<h2 class="section-title"><span class="section-index">01</span> Selected Projects</h2>
 			<p class="section-sub">A few of the live things I&rsquo;ve built and shipped.</p>
@@ -141,10 +142,15 @@
 
 	<script>
 		document.getElementById('year').textContent = new Date().getFullYear();
-		const io = new IntersectionObserver((entries) => {
-			entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
-		}, { threshold: 0.12 });
-		document.querySelectorAll('.reveal, .card').forEach(el => io.observe(el));
+		// Keep all content visible with JavaScript disabled, reduced motion, or no observer support.
+		if ('IntersectionObserver' in window &&
+			(!window.matchMedia || !window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+			document.documentElement.classList.add('js-reveal');
+			const io = new IntersectionObserver((entries) => {
+				entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+			}, { threshold: 0.12 });
+			document.querySelectorAll('.reveal, .card').forEach(el => io.observe(el));
+		}
 	</script>
 </body>
 </html>
