@@ -278,8 +278,8 @@ body {
 	text-decoration: none;
 	color: var(--text);
 	transition: transform 0.22s ease, border-color 0.22s, background 0.22s, opacity 0.5s ease, translate 0.5s ease;
-	opacity: 0;
-	translate: 0 18px;
+	opacity: 1;
+	translate: 0 0;
 }
 
 .card.visible { opacity: 1; translate: 0 0; }
@@ -371,8 +371,8 @@ body {
 
 /* ---------- Scroll reveal ---------- */
 .reveal {
-	opacity: 0;
-	translate: 0 24px;
+	opacity: 1;
+	translate: 0 0;
 	transition: opacity 0.6s ease, translate 0.6s ease;
 }
 
@@ -382,4 +382,14 @@ body {
 	.aurora, .avatar-ring, .avatar { animation: none; }
 	.reveal, .card { opacity: 1; translate: 0 0; transition: none; }
 	html { scroll-behavior: auto; }
+}
+
+/* Progressive enhancement: content stays visible without JavaScript or IntersectionObserver. */
+:where(a, button, input, textarea, select):focus-visible {
+  outline: 3px solid #22d3ee;
+  outline-offset: 3px;
+}
+#projects, #skills, #contact { scroll-margin-top: 96px; }
+@media (max-width: 420px) {
+  .grid { grid-template-columns: minmax(0, 1fr); }
 }
