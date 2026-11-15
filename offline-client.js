@@ -4,10 +4,14 @@
   const base = new URL('./', source);
   const bar = document.createElement('aside');
   bar.setAttribute('aria-label', 'Automatic offline saving');
-  bar.style.cssText = 'position:relative;z-index:10000;padding:10px 18px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;background:#183d34;color:#fff;font:14px/1.6 system-ui,sans-serif';
+  bar.style.cssText = 'position:relative;z-index:50;padding:10px 18px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;background:#183d34;color:#fff;font:14px/1.6 system-ui,sans-serif';
   const status = document.createElement('span');status.setAttribute('role', 'status');status.setAttribute('aria-live', 'polite');
   const retry = document.createElement('button');retry.type = 'button';retry.textContent = 'Check offline copy';retry.style.cssText = 'font:inherit;color:inherit;background:transparent;border:1px solid #b9d8ca;border-radius:6px;padding:6px 10px;min-height:36px;cursor:pointer';
-  bar.append(status, retry);document.body.prepend(bar);
+  bar.append(status, retry);
+  // Preserve the page's Skip to main content link as the first keyboard stop.
+  const first = document.body.firstElementChild;
+  if (first?.classList?.contains('skip-link')) first.insertAdjacentElement('afterend', bar);
+  else document.body.prepend(bar);
   let timer, checking = false, ready = false;
   const limits = document.querySelector('meta[name="offline-limits"]')?.content || 'External websites and live services need internet.';
   function say(message) { status.textContent = message + ' ' + limits; }
