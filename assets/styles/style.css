@@ -55,6 +55,11 @@ body {
 	pointer-events: none;
 }
 
+/* Keyboard-first skip navigation stays offscreen until focused. */
+.skip-link { position: fixed; top: 12px; left: 12px; z-index: 100; padding: 12px 18px; border-radius: 8px; background: #0a0e1a; color: #fff; border: 2px solid #22d3ee; text-decoration: none; transform: translateY(-180%); }
+.skip-link:focus-visible { transform: translateY(0); }
+#main-content { scroll-margin-top: 96px; }
+
 /* ---------- Nav ---------- */
 .nav {
 	position: sticky;
@@ -192,8 +197,8 @@ body {
 
 .btn-primary {
 	color: #fff;
-	background: linear-gradient(92deg, var(--accent-1), var(--accent-2));
-	box-shadow: 0 8px 28px rgba(99, 102, 241, 0.35);
+	background: linear-gradient(92deg, #4338ca, #155e75);
+	box-shadow: 0 8px 28px rgba(67, 56, 202, 0.35);
 }
 
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 34px rgba(99, 102, 241, 0.5); }
