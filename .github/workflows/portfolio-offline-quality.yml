@@ -6,7 +6,7 @@ on:
     paths:
       - "scripts/build-offline.py"
       - "tests/test_build_offline.py"
-      - ".github/workflows/webdevportfolio-quality.yml"
+      - ".github/workflows/portfolio-offline-quality.yml"
       - "**/*.html"
       - "offline-assets.json"
       - "sw.js"
