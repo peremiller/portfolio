@@ -1,0 +1,57 @@
+name: Portfolio offline integrity
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - "scripts/build-offline.py"
+      - "tests/test_build_offline.py"
+      - ".github/workflows/webdevportfolio-quality.yml"
+      - "**/*.html"
+      - "offline-assets.json"
+      - "sw.js"
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run source-preservation and offline safety tests
+        run: python3 -m unittest discover -s tests -p 'test_*.py' -v
+      # A failed read-only check is not a passing release gate. Provide the exact
+      # regenerated files from a complete Actions checkout for review and commit.
+      - name: Check committed offline bundle without modification
+        id: committed_offline_check
+        continue-on-error: true
+        run: python3 scripts/build-offline.py --check
+      - name: Regenerate review candidate in temporary CI checkout only
+        if: steps.committed_offline_check.outcome == 'failure'
+        run: |
+          python3 scripts/build-offline.py
+          python3 scripts/build-offline.py --check
+          git status --short
+      - name: Attach original-path offline files for review (no publishing)
+        if: steps.committed_offline_check.outcome == 'failure'
+        uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-offline-repair-candidate
+          path: |
+            sw.js
+            offline-assets.json
+            index.html
+          if-no-files-found: error
+          retention-days: 7
+      - name: Preserve failing gate until tracked offline files are fixed
+        if: steps.committed_offline_check.outcome == 'failure'
+        run: |
+          echo 'Committed offline files are stale. Inspect and commit the generated originals.' >&2
+          exit 1
